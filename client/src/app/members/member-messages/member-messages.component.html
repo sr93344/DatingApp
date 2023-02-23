@@ -4,7 +4,7 @@
             No Messages yet... say hi using the message box below
         </div>
 
-        <ul class="chat" *ngIf="(messageService.messageThread$ | async)!.length > 0">
+        <ul #scrollme [scrollTop]="scrollme.scrollHeight"class="chat" *ngIf="(messageService.messageThread$ | async)!.length > 0">
             <li *ngFor="let message of (messageService.messageThread$ | async)">
                 <div>
                     <span class="chat-img float-end">
